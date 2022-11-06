@@ -237,4 +237,16 @@ if ex7.accepts_input(my_input_str):
     print('accepted')
 else:
     print('rejected')
-print(ex7.show_diagram('D:\src\DFA\ex7.png'))
+# print(ex7.show_diagram('D:\src\DFA\ex7.png'))
+
+# create a DFA from an NFA
+dfa_from_nfa = DFA.from_nfa(ex7)
+print(dfa_from_nfa.show_diagram('D:\src\DFA\dfa_from_nfa.png'))
+
+nfa_from_dfa = NFA.from_dfa(dfa_from_nfa)
+print(nfa_from_dfa.show_diagram('D:\src\DFA\\nfa_from_dfa.png'))
+
+# create a  GNFA from the NFA and then convert to regular expression
+gnfa_from_nfa = GNFA.from_nfa(nfa_from_dfa)
+print(gnfa_from_nfa.show_diagram('D:\src\DFA\gnfa_from_nfa.png'))
+print(gnfa_from_nfa.to_regex())
