@@ -4,7 +4,7 @@ from automata.pda.dpda import DPDA
 from automata.fa.gnfa import GNFA
 from automata.pda.npda import NPDA
 from automata.tm.dtm import DTM
-import automata.base.regex as re
+import automata.regex.regex as re
 
 # Give an NFA that recognizes all words that are in ((ab)*)(b*)
 # example accepted: 'abb', 'ababbb', 'abababbbb'  (in ((ab)*)(b*))

@@ -4,7 +4,11 @@ from automata.pda.dpda import DPDA
 from automata.fa.gnfa import GNFA
 from automata.pda.npda import NPDA
 from automata.tm.dtm import DTM
-import automata.base.regex as re
+import automata.regex.regex as re
+from pyformlang.regular_expression import Regex
+
+reg = Regex('a*')
+print(f'reg accepts: {reg.accepts("aa a")}')
 
 # Give a DFA that recognizes all words that start with 'bba'
 # example accepted: 'bba', 'bbabba', 'bbabbaabba'
