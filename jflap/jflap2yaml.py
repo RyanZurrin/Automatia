@@ -116,11 +116,11 @@ def parse_zip(zf, pda=False, turin=False):
 
 def load_from_zip(filename, pda=False, turin=False):
     with zipfile.ZipFile(filename, "r") as zf:
-        return dict((Path(p).stem, dfa) for p, dfa in parse_zip(zf, pda, turin))
+        return {Path(p).stem: dfa for p, dfa in parse_zip(zf, pda, turin)}
 
 
 def load_from_list(filenames, pda=False, turin=False):
-    result = dict()
+    result = {}
     if pda:
         for filename in filenames:
             result[Path(filename).stem] = parse_pda(

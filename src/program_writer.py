@@ -41,7 +41,7 @@ def main():
             lines = f.readlines()
 
         # modify the python program 1 + 1 = 2 then 1 + 2 = 3 then 1 + 3 = 4 etc
-        lines[1] = '    return x + ' + str(random.randint(1, 100)) + '\n'
+        lines[1] = f'    return x + {random.randint(1, 100)}' + '\n'
 
         # write the modified python program to a file
         with open(file_name, 'w') as f:
